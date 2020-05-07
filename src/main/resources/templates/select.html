@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>Bookmin 管理</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</Head>
+<div th:include="header"></div>
+<!-- Breadcrumbs -->
+<ul class="breadcrumb">
+    <li>書籍一覧</li>
+</ul><!-- Breadcrumbs -->
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>書名</th>
+            <th>著者</th>
+            <th>出版社</th>
+            <th>キーワード</th>
+            <th>ISBN</th>
+            <th>登録日</th>
+            <th>状態</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="book:${book}" th:object="${book}">
+            <td th:text="*{title}"></td>
+            <td th:text="*{auhor}"></td>
+            <td th:text="*{publisher}"></td>
+            <td></td>
+            <td th:text="*{isbn}"></td>
+            <td th:text="*{issueYear}"></td>
+            <td></td>
+          </tr>
+        </tbody>
+    </table>
+</div>
