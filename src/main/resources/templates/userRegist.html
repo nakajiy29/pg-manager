@@ -13,26 +13,33 @@
 <div class="container">
    <div class="panel panel-default">
        <div class="panel-body">
+           <form class="form-horizontal" action="/userregist" method="post" th:object="${user}">
            <div class="form-group">
                <label>名字</label>
                <div class="col-sm-5" style="display:inline-flex">
-                   <input type="text" class="form-control" id="lastName" placeholder="言語">
-                   <input type="text" class="form-control" id="firstName" placeholder="太郎">
+                   <input type="text" class="form-control" id="lastName" name="lastname" placeholder="言語">
+                   <input type="text" class="form-control" id="firstName" name="firstname" placeholder="太郎">
                </div>
+               <div class="text-danger" th:errors="*{lastname}"></div>
+               <div class="text-danger" th:errors="*{firstname}"></div>
            </div>
            <div class="form-group">
                <label>生年月日</label>
                <div class="col-sm-5" style="display:inline-flex">
-                   <input type="text" class="form-control" id="year" placeholder="1990">年
-                   <input type="text" class="form-control" id="month" placeholder="1">月
-                   <input type="text" class="form-control" id="day" placeholder="1">日
+                   <input type="text" class="form-control" id="year" name="year" placeholder="1990">年
+                   <input type="text" class="form-control" id="month" name="month" placeholder="1">月
+                   <input type="text" class="form-control" id="day" name="day" placeholder="1">日
                </div>
+               <div class="text-danger" th:errors="*{year}"></div>
+               <div class="text-danger" th:errors="*{month}"></div>
+               <div class="text-danger" th:errors="*{day}"></div>
            </div>
            <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button class="btn btn-primary">登録</button>
                 </div>
            </div>
+           </form>
         </div>
     </div>
 </div>

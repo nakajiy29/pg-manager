@@ -49,9 +49,4 @@ public class HeloController {
         bookService.save(book);
         return "redirect:/select";
     }
-
-    @GetMapping("/user/regist")
-    public String userRegist(Model model) {
-        return "userRegist";
-    }
 }
